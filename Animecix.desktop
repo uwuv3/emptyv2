@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Animecix
+Exec="cd /Apps && ./AnimeciX.AppImage"
+Icon=/Apps/animecix.png
+Type=Application
+Categories=UtilityAudioVideo;
