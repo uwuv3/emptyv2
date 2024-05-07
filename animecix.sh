@@ -35,17 +35,17 @@ indirilecek_script="$klasor_yolu/$script_adi"
 if [ -e "$indirilecek_dosya" ]; then
     echo "Dosya başarıyla indirildi: $indirilecek_dosya"
 else
-wget -O "$indirilecek_dosya" "$dosya_url"
+  sudo wget -O "$indirilecek_dosya" "$dosya_url"
 fi
 if [ -e "$indirilecek_icon" ]; then
     echo "Dosya başarıyla indirildi: $indirilecek_icon"
 else
- wget -O "$indirilecek_icon" "$icon_url"
+ sudo wget -O "$indirilecek_icon" "$icon_url"
 fi
 if [ -e "$indirilecek_script" ]; then
     echo "Dosya başarıyla indirildi: $indirilecek_script"
 else
- wget -O "$indirilecek_script" "$script_url"
+ sudo wget -O "$indirilecek_script" "$script_url"
 fi
 if [ -e "$indirilecek_dosya" ]; then
 echo ""
@@ -53,12 +53,7 @@ else
 echo "indirilemedi"
 exit 1
 fi
-if [ -e "$indirilecek_script" ]; then
-echo ""
-else
-echo "indirilemedi"
-exit 1
-fi
+
 if [ -e "$indirilecek_icon" ]; then
 echo ""
 else
@@ -70,9 +65,15 @@ fi
 echo "İzin veriliyor"
 sudo chmod +x "$indirilecek_dosya"
 sudo chmod +x "$indirilecek_icon"
+sudo chmod +x "$indirilecek_script"
 echo "İzin verildi"
 echo ".desktop oluşturuluyor"
 echo -e "[Desktop Entry]\nName=Animecix\nExec=\"cd /Apps && ./$script_adi\"\nIcon=$indirilecek_icon\nType=Application\nCategories=UtilityAudioVideo;" > Animecix.desktop
 echo -e "[Desktop Entry]\nName=Animecix\nExec=\"cd /Apps && ./$script_adi\"\nIcon=$indirilecek_icon\nType=Application\nCategories=UtilityAudioVideo;" > ~/.local/share/applications/Animecix.desktop
 clear
-cd /Apps && ./$script_adi
+if [ -e "$indirilecek_script" ]; then
+cd /Apps && ./$dosya_adi
+else
+echo "indirilemedi"
+exit 1
+fi
