@@ -1,0 +1,30 @@
+[submodule "deps/@std/"]
+    path = deps/@std
+    url = https://github.com/denoland/std.git
+
+[submodule "deps/@discordjs/builders"]
+    path = deps/@discordjs/builders
+    url = https://github.com/discordjs/builders.git
+
+[submodule "deps/@discordjs/collection"]
+    path = deps/@discordjs/collection
+    url = https://github.com/discordjs/collection.git
+
+[submodule "deps/@discordjs/rest"]
+    path = deps/@discordjs/rest
+    url = https://github.com/discordjs/rest.git
+
+[submodule "deps/chalk"]
+    path = deps/chalk
+    url = https://github.com/chalk/chalk.git
+
+[submodule "deps/discord-api-types"]
+    path = deps/discord-api-types
+    url = https://github.com/discordjs/discord-api-types.git
+
+[submodule "deps/discord.js"]
+    path = deps/discord.js
+    url = https://github.com/discordjs/discord.js.git
+[submodule "deps/express"]
+    path = deps/express
+    url = https://github.com/expressjs/express.git
